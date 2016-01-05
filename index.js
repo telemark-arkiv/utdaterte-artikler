@@ -1,29 +1,12 @@
 'use strict'
 
-var smta = require('sitemap-to-array')
-var filterArticles = require('./lib/filter-articles')
-var sitemapUrl = 'http://www.telemark.no/sitemap.xml'
+var routes = require('./routes')
 
-var options = {
-  limit: 360,
-  skipFolders: ['/Aktuelt']
+exports.register = function (server, options, next) {
+  server.route(routes)
+  next()
 }
 
-var smtaOptions = {
-  returnOnComplete: true
+exports.register.attributes = {
+  pkg: require('./package.json')
 }
-
-smta(sitemapUrl, smtaOptions, function (error, list) {
-  if (error) {
-    console.error(error)
-  } else {
-    options.list = list
-    filterArticles(options, function (err, data) {
-      if (err) {
-        console.error(err)
-      } else {
-        console.log(data)
-      }
-    })
-  }
-})
