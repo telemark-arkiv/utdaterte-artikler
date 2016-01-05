@@ -1,0 +1,41 @@
+{
+  "name": "utdaterte-artikler",
+  "version": "1.0.0",
+  "description": "Holde oversikt på utdaterte artikler",
+  "license": "MIT",
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "bugs": {
+    "url": "https://github.com/telemark/utdaterte-artikler/issues"
+  },
+  "homepage": "https://github.com/telemark/utdaterte-artikler",
+  "main": "index.js",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "scripts": {
+    "test": "standard && tap --reporter=spec test/*.js",
+    "coverage": "tap test/*.js --coverage",
+    "coveralls": "tap --cov --coverage-report=lcov test/*.js && cat coverage/lcov.info | coveralls",
+    "start": "node standalone.js",
+    "setup": "npm install && node setup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/telemark/utdaterte-artikler.git"
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.6",
+    "standard": "^5.4.1",
+    "tap": "^5.0.0"
+  },
+  "dependencies": {
+    "hapi": "^12.0.0",
+    "i": "^0.3.3",
+    "npm": "^3.5.2",
+    "sitemap-to-array": "^4.0.0"
+  }
+}
