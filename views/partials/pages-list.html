@@ -1,3 +1,18 @@
-{{#each articles}}
-    {{loc}}
-{{/each}}
+<table class="table table-responsive">
+    <thead>
+    <tr>
+        <th>Endret</th>
+        <th>Plassering</th>
+        <th>Rediger</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each articles}}
+    <tr>
+        <td>{{lastmod}}</td>
+        <td><a href="{{loc}}" target="_blank">{{showPathOnly loc}}</a></td>
+        <td><a href="{{loc}}" target="_blank">Rediger</a></td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>

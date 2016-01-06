@@ -1,3 +1,28 @@
 <h1>Utgåtte sider</h1>
-
+<form action="/" method="post">
+    <select name="showOnly">
+        <option value="">Alle</option>
+        <option value="Politikk">Politikk</option>
+        <option value="Vaare-tjenester">Våre tjenester</option>
+        <option value="Vaare-tjenester/Arealbruk-og-transport">Våre tjenester/Arealbruk og transport</option>
+        <option value="Vaare-tjenester/Folkehelse">Våre tjenester/Folkehelse</option>
+        <option value="Vaare-tjenester/Internasjonalt-arbeid">Våre tjenester/Internasjonalt arbeid</option>
+        <option value="Vaare-tjenester/Kultur-og-idrett">Våre tjenester/Kultur og idrett</option>
+        <option value="Vaare-tjenester/Kulturminner">Våre tjenester/Kulturminner</option>
+        <option value="Vaare-tjenester/Miljoe-og-friluftsliv">Våre tjeneste/Miljø og friluftslivr</option>
+        <option value="Vaare-tjenester/Naeringsutvikling">Våre tjenester/Næringsutvikling</option>
+        <option value="Vaare-tjenester/Tannhelse">Våre tjenester/Tannhelse</option>
+        <option value="Vaare-tjenester/Utdanning">Våre tjenester/Utdanning</option>
+        <option value="Planer">Planer</option>
+        <option value="Fylkeskommunen">Fylkeskommunen</option>
+        <option value="Om-Telemark">Om telemark</option>
+        <option value="Aktuelt">Aktuelt</option>
+    </select>
+    <input type="text" value="360" name="limitDays">
+    <input type="text" value="/Aktuelt" name="filterBy">
+    <button type="submit">Filtrer</button>
+</form>
 {{>pages-list}}
+<form action="/export" method="post">
+    <button type="submit">Eksporter liste</button>
+</form>
