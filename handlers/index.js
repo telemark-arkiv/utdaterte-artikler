@@ -4,12 +4,10 @@ var config = require('../config')
 var getFilteredArticles = require('../lib/get-filtered-articles')
 
 function getFrontpage (request, reply) {
-  var viewOptions = {}
-
   var options = {
     limit: 360,
     skipFolders: ['/Aktuelt'],
-    sitemapUrl: 'http://www.telemark.no/sitemap.xml',
+    sitemapUrl: config.SITEMAP_URL,
     showOnly: ''
   }
 
@@ -17,29 +15,27 @@ function getFrontpage (request, reply) {
     if (error) {
       reply(error)
     } else {
-      viewOptions.articles = data
-      reply.view('index', viewOptions)
+      options.articles = data
+      reply.view('index', options)
     }
   })
 }
 
 function filterFrontpage (request, reply) {
-  var viewOptions = {}
   var payload = request.payload
   var options = {
     limit: parseInt(payload.limitDays, 10),
     skipFolders: payload.filterBy.split(','),
-    sitemapUrl: 'http://www.telemark.no/sitemap.xml',
+    sitemapUrl: config.SITEMAP_URL,
     showOnly: payload.showOnly
   }
 
-  console.log(payload)
   getFilteredArticles(options, function (error, data) {
     if (error) {
       reply(error)
     } else {
-      viewOptions.articles = data
-      reply.view('index', viewOptions)
+      options.articles = data
+      reply.view('index', options)
     }
   })
 }

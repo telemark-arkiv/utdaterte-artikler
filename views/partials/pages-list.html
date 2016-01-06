@@ -1,4 +1,4 @@
-<table class="table table-responsive">
+<table class="table table-responsive" id="articleTable">
     <thead>
     <tr>
         <th>Endret</th>
@@ -11,7 +11,7 @@
     <tr>
         <td>{{lastmod}}</td>
         <td><a href="{{loc}}" target="_blank">{{showPathOnly loc}}</a></td>
-        <td><a href="{{loc}}" target="_blank">Rediger</a></td>
+        <td><a href="{{createEditUrl loc}}" target="_blank">Rediger</a></td>
     </tr>
     {{/each}}
     </tbody>

@@ -1,28 +1,49 @@
-<h1>Utgåtte sider</h1>
-<form action="/" method="post">
-    <select name="showOnly">
-        <option value="">Alle</option>
-        <option value="Politikk">Politikk</option>
-        <option value="Vaare-tjenester">Våre tjenester</option>
-        <option value="Vaare-tjenester/Arealbruk-og-transport">Våre tjenester/Arealbruk og transport</option>
-        <option value="Vaare-tjenester/Folkehelse">Våre tjenester/Folkehelse</option>
-        <option value="Vaare-tjenester/Internasjonalt-arbeid">Våre tjenester/Internasjonalt arbeid</option>
-        <option value="Vaare-tjenester/Kultur-og-idrett">Våre tjenester/Kultur og idrett</option>
-        <option value="Vaare-tjenester/Kulturminner">Våre tjenester/Kulturminner</option>
-        <option value="Vaare-tjenester/Miljoe-og-friluftsliv">Våre tjeneste/Miljø og friluftslivr</option>
-        <option value="Vaare-tjenester/Naeringsutvikling">Våre tjenester/Næringsutvikling</option>
-        <option value="Vaare-tjenester/Tannhelse">Våre tjenester/Tannhelse</option>
-        <option value="Vaare-tjenester/Utdanning">Våre tjenester/Utdanning</option>
-        <option value="Planer">Planer</option>
-        <option value="Fylkeskommunen">Fylkeskommunen</option>
-        <option value="Om-Telemark">Om telemark</option>
-        <option value="Aktuelt">Aktuelt</option>
-    </select>
-    <input type="text" value="360" name="limitDays">
-    <input type="text" value="/Aktuelt" name="filterBy">
-    <button type="submit">Filtrer</button>
+<h1>Vedlikehold av artikler</h1>
+<form action="/" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label for="selectShowOnly" class="col-sm-2 control-label">Område</label>
+        <div class="col-sm-10">
+            <select name="showOnly" id="selectShowOnly" class="form-control">
+                <option value="" {{isSelected "" showOnly}}>Alle</option>
+                <option value="Politikk" {{isSelected "Politikk" showOnly}}>Politikk</option>
+                <option value="Vaare-tjenester" {{isSelected "Vaare-tjenester" showOnly}}>Våre tjenester</option>
+                <option value="Vaare-tjenester/Arealbruk-og-transport" {{isSelected "Vaare-tjenester/Arealbruk-og-transport" showOnly}}>Våre tjenester/Arealbruk og transport</option>
+                <option value="Vaare-tjenester/Folkehelse" {{isSelected "Vaare-tjenester/Folkehelse" showOnly}}>Våre tjenester/Folkehelse</option>
+                <option value="Vaare-tjenester/Internasjonalt-arbeid" {{isSelected "Vaare-tjenester/Internasjonalt-arbeid" showOnly}}>Våre tjenester/Internasjonalt arbeid</option>
+                <option value="Vaare-tjenester/Kultur-og-idrett" {{isSelected "Vaare-tjenester/Kultur-og-idrett" showOnly}}>Våre tjenester/Kultur og idrett</option>
+                <option value="Vaare-tjenester/Kulturminner" {{isSelected "Vaare-tjenester/Kulturminner" showOnly}}>Våre tjenester/Kulturminner</option>
+                <option value="Vaare-tjenester/Miljoe-og-friluftsliv" {{isSelected "Vaare-tjenester/Miljoe-og-friluftsliv" showOnly}}>Våre tjeneste/Miljø og friluftslivr</option>
+                <option value="Vaare-tjenester/Naeringsutvikling" {{isSelected "Vaare-tjenester/Naeringsutvikling" showOnly}}>Våre tjenester/Næringsutvikling</option>
+                <option value="Vaare-tjenester/Tannhelse" {{isSelected "Vaare-tjenester/Tannhelse" showOnly}}>Våre tjenester/Tannhelse</option>
+                <option value="Vaare-tjenester/Utdanning" {{isSelected "Vaare-tjenester/Utdanning" showOnly}}>Våre tjenester/Utdanning</option>
+                <option value="Planer" {{isSelected "Planer" showOnly}}>Planer</option>
+                <option value="Fylkeskommunen" {{isSelected "Fylkeskommunen" showOnly}}>Fylkeskommunen</option>
+                <option value="Om-Telemark" {{isSelected "Om-Telemark" showOnly}}>Om Telemark</option>
+                <option value="Aktuelt" {{isSelected "Aktuelt" showOnly}}>Aktuelt</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputLimitDays" class="col-sm-2 control-label">Vis eldre enn</label>
+        <div class="col-sm-10">
+            <input type="text" value="360" name="limitDays" id="inputLimitDays" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputFilterBy" class="col-sm-2 control-label">Dropp følgende mapper</label>
+        <div class="col-sm-10">
+            <input type="text" value="/Aktuelt" name="filterBy" id="inputFilterBy" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Filtrer</button>
+            <a download="gamle.artikler.xls" href="#" onclick="return ExcellentExport.excel(this, 'articleTable', 'Gamle artikler');" class="btn btn-success">Exporter til Excel</a>
+        </div>
+    </div>
+    <div class="col-sm-offset-2 col-sm-10 text-muted">
+        <strong>Vis eldre enn</strong>: Tast antall dager du du vil vise artikler endre enn.<br/>
+        <strong>Dropp følgende mapper</strong>: Om du vil hoppe over flere mapper skriv det inn adskilt med komma (/Aktuelt, /Pressemeldinger)
+    </div>
 </form>
 {{>pages-list}}
-<form action="/export" method="post">
-    <button type="submit">Eksporter liste</button>
-</form>
