@@ -4,13 +4,16 @@
 #
 ###########################################################
 
-# Setting the base to nodejs 4.2
-FROM mhart/alpine-node:4
+# Setting the base to nodejs 4.2.6
+FROM mhart/alpine-node:4.2.6
 
 # Maintainer
 MAINTAINER Geir Gåsodden
 
 #### Begin setup ####
+
+# Installs git
+RUN apk add --update git && rm -rf /var/cache/apk/*
 
 # Bundle app source
 COPY . /src
