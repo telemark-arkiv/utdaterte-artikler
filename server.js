@@ -5,6 +5,13 @@ var Hoek = require('hoek')
 var server = new Hapi.Server()
 var config = require('./config')
 var outdatedService = require('./index')
+var yarOptions = {
+  storeBlank: false,
+  cookieOptions: {
+    password: 'password',
+    isSecure: false
+  }
+}
 
 server.connection({
   port: config.SERVER_PORT
@@ -43,6 +50,15 @@ server.register(require('inert'), function (err) {
       auth: false
     }
   })
+})
+
+server.register({
+  register: require('yar'),
+  options: yarOptions
+}, function (err) {
+  if (err) {
+    console.error('Failed to load a plugin:', err)
+  }
 })
 
 server.register([

@@ -38,14 +38,16 @@
     "tap": "^5.0.0"
   },
   "dependencies": {
+    "concat-stream": "^1.5.1",
     "handlebars": "^4.0.5",
     "hapi": "^12.1.0",
     "hoek": "^3.0.4",
     "http-https": "^1.0.0",
     "inert": "^3.2.0",
     "path": "^0.12.7",
-    "sitemap-to-array": "^4.0.0",
+    "sitemap-to-array": "^2.0.0",
     "vision": "^4.0.1",
-    "wreck": "^7.0.0"
+    "wreck": "^7.0.0",
+    "yar": "^6.0.0"
   }
 }

@@ -1,9 +1,11 @@
 'use strict'
 
 var config = require('../config')
+var getSitemapData = require('../lib/get-sitemap-data')
 var getFilteredArticles = require('../lib/get-filtered-articles')
 
 function getFrontpage (request, reply) {
+  var sitemapData = request.yar.get('sitemapData')
   var options = {
     limit: 360,
     skipFolders: ['/Aktuelt'],
@@ -11,17 +13,26 @@ function getFrontpage (request, reply) {
     showOnly: ''
   }
 
-  getFilteredArticles(options, function (error, data) {
-    if (error) {
-      reply(error)
-    } else {
-      options.articles = data
-      reply.view('index', options)
-    }
-  })
+  if (!sitemapData) {
+    getSitemapData(options, function (error, sitemapData) {
+      if (error) {
+        reply(error)
+      } else {
+        request.yar.set({'sitemapData': sitemapData})
+        options.sitemapData = sitemapData
+        options.articles = getFilteredArticles(options)
+        reply.view('index', options)
+      }
+    })
+  } else {
+    options.sitemapData = sitemapData
+    options.articles = getFilteredArticles(options)
+    reply.view('index', options)
+  }
 }
 
 function filterFrontpage (request, reply) {
+  var sitemapData = request.yar.get('sitemapData')
   var payload = request.payload
   var options = {
     limit: parseInt(payload.limitDays, 10),
@@ -30,14 +41,22 @@ function filterFrontpage (request, reply) {
     showOnly: payload.showOnly
   }
 
-  getFilteredArticles(options, function (error, data) {
-    if (error) {
-      reply(error)
-    } else {
-      options.articles = data
-      reply.view('index', options)
-    }
-  })
+  if (!sitemapData) {
+    getSitemapData(options, function (error, sitemapData) {
+      if (error) {
+        reply(error)
+      } else {
+        request.yar.set({'sitemapData': sitemapData})
+        options.sitemapData = sitemapData
+        options.articles = getFilteredArticles(options)
+        reply.view('index', options)
+      }
+    })
+  } else {
+    options.sitemapData = sitemapData
+    options.articles = getFilteredArticles(options)
+    reply.view('index', options)
+  }
 }
 
 module.exports.getFrontpage = getFrontpage
