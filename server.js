@@ -8,7 +8,7 @@ var outdatedService = require('./index')
 var yarOptions = {
   storeBlank: false,
   cookieOptions: {
-    password: 'password',
+    password: config.YAR_SECRET,
     isSecure: false
   }
 }
