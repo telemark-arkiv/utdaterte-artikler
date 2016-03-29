@@ -34,9 +34,11 @@ function getFrontpage (request, reply) {
 function filterFrontpage (request, reply) {
   var sitemapData = request.yar.get('sitemapData')
   var payload = request.payload
+  var filterBy = payload.filterBy || false
+  var skipFolders = filterBy ? filterBy.split(',') : filterBy
   var options = {
     limit: parseInt(payload.limitDays, 10),
-    skipFolders: payload.filterBy.split(','),
+    skipFolders: skipFolders,
     sitemapUrl: config.SITEMAP_URL,
     showOnly: payload.showOnly
   }
