@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = function (input) {
-  return input ? input : ''
+  return input || ''
 }
