@@ -45,7 +45,7 @@
     "http-https": "1.0.0",
     "inert": "3.2.0",
     "sitemap-to-array": "2.0.0",
-    "vision": "4.0.1",
+    "vision": "4.1.0",
     "wreck": "7.1.0",
     "yar": "7.0.0"
   }
