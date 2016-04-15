@@ -1,6 +1,6 @@
 {
   "name": "utdaterte-artikler",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Holde oversikt på utdaterte artikler",
   "license": "MIT",
   "author": {
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/telemark/utdaterte-artikler",
   "main": "index.js",
   "engines": {
-    "node": ">=4.4.1"
+    "node": ">=4.4.2"
   },
   "scripts": {
     "test": "standard && tap --reporter=spec test/*.js",
