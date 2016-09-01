@@ -38,7 +38,7 @@
     "tap": "7.0.0"
   },
   "dependencies": {
-    "concat-stream": "1.5.1",
+    "concat-stream": "1.5.2",
     "handlebars": "4.0.5",
     "hapi": "15.0.2",
     "hoek": "4.0.2",
