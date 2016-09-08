@@ -46,7 +46,7 @@
     "inert": "4.0.1",
     "sitemap-to-array": "2.0.0",
     "vision": "4.1.0",
-    "wreck": "9.0.0",
+    "wreck": "10.0.0",
     "yar": "8.0.0"
   }
 }
