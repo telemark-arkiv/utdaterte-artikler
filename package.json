@@ -41,7 +41,7 @@
     "concat-stream": "1.5.2",
     "handlebars": "4.0.5",
     "hapi": "15.0.3",
-    "hoek": "4.0.2",
+    "hoek": "4.1.0",
     "http-https": "1.0.0",
     "inert": "4.0.1",
     "sitemap-to-array": "2.0.0",
