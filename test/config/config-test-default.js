@@ -1,7 +1,7 @@
 'use strict'
 
 var tap = require('tap')
-var config = require('../config')
+var config = require('../../config/index')
 
 tap.equal(config.SERVER_PORT, 3000, 'Default SERVER_PORT ok')
 tap.equal(config.BASE_URL, 'http://www.telemark.no', 'Default BASE_URL ok')
