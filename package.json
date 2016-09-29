@@ -14,7 +14,7 @@
   "homepage": "https://github.com/telemark/utdaterte-artikler",
   "main": "index.js",
   "engines": {
-    "node": ">=4.4.2"
+    "node": ">=4.6.0"
   },
   "scripts": {
     "test": "standard && tap --reporter=spec test/**/*.js",
