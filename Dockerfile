@@ -26,8 +26,8 @@ RUN npm install
 
 # Env variables
 ENV SERVER_PORT 3000
-ENV BASE_URL http://www.telemark.no
-ENV SITEMAP_URL http://www.telemark.no/sitemap.xml
+ENV BASE_URL https://www.telemark.no
+ENV SITEMAP_URL https://www.telemark.no/sitemap.xml
 ENV YAR_SECRET passwordpasswordpasswordpassword
 
 # Expose 3000
