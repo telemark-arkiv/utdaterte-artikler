@@ -44,7 +44,7 @@
     "hapi": "16.0.2",
     "hoek": "4.1.0",
     "http-https": "1.0.0",
-    "inert": "4.0.3",
+    "inert": "4.0.4",
     "sitemap-to-array": "2.0.0",
     "vision": "4.1.1",
     "wreck": "10.0.0",
