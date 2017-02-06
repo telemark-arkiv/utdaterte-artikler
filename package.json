@@ -33,10 +33,10 @@
     ]
   },
   "devDependencies": {
-    "coveralls": "2.11.15",
+    "coveralls": "2.11.16",
     "nsp": "2.6.2",
     "standard": "8.6.0",
-    "tap": "10.0.0"
+    "tap": "10.0.2"
   },
   "dependencies": {
     "concat-stream": "1.6.0",
@@ -45,7 +45,7 @@
     "hoek": "4.1.0",
     "http-https": "1.0.0",
     "inert": "4.1.0",
-    "sitemap-to-array": "2.0.0",
+    "sitemap-to-array": "4.0.0",
     "vision": "4.1.1",
     "wreck": "10.0.0",
     "yar": "8.1.2"
