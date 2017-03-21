@@ -1,6 +1,6 @@
 {
   "name": "utdaterte-artikler",
-  "version": "3.0.25",
+  "version": "3.1.0",
   "description": "Holde oversikt på utdaterte artikler",
   "license": "MIT",
   "author": {
@@ -14,7 +14,7 @@
   "homepage": "https://github.com/telemark/utdaterte-artikler",
   "main": "index.js",
   "engines": {
-    "node": ">=4.6.0"
+    "node": ">=4.8.0"
   },
   "scripts": {
     "test": "standard && nsp check && tap --reporter=spec test/**/*.js",
@@ -39,13 +39,10 @@
     "tap": "10.3.0"
   },
   "dependencies": {
-    "concat-stream": "1.6.0",
     "handlebars": "4.0.6",
     "hapi": "16.1.0",
     "hoek": "4.1.0",
-    "http-https": "1.0.0",
     "inert": "4.1.0",
-    "sitemap-to-array": "4.0.0",
     "vision": "4.1.1",
     "wreck": "10.0.0",
     "yar": "8.1.2"
