@@ -3,6 +3,7 @@
   "version": "3.1.0",
   "description": "Holde oversikt på utdaterte artikler",
   "license": "MIT",
+  "private": true,
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
