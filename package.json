@@ -3,6 +3,7 @@
   "version": "3.1.0",
   "description": "Holde oversikt på utdaterte artikler",
   "license": "MIT",
+  "private": true,
   "author": {
     "name": "Geir Gåsodden",
     "email": "geir.gasodden@pythonia.no",
@@ -36,7 +37,7 @@
     "coveralls": "2.12.0",
     "nsp": "2.6.3",
     "standard": "10.0.0",
-    "tap": "10.3.0"
+    "tap": "10.3.1"
   },
   "dependencies": {
     "handlebars": "4.0.6",
